@@ -1,0 +1,10 @@
+{
+  "name": "stl-jira-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Plugin Claude de abertura de cards no Jira da STLFLIX. Este package.json só dá os comandos de verificação do repositório.",
+  "scripts": {
+    "typecheck": "npm --prefix server run typecheck",
+    "test": "npm --prefix server test && npm --prefix server run bundle:check"
+  }
+}
