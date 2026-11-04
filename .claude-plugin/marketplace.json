@@ -3,7 +3,7 @@
   "owner": { "name": "STLFLIX", "email": "joao.gonzalez@stlflix.com" },
   "metadata": {
     "description": "Plugins de Jira da STLFLIX",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   "plugins": [
     {
