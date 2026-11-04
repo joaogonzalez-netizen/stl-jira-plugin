@@ -1,0 +1,16 @@
+{
+  "name": "stl-jira",
+  "owner": { "name": "STLFLIX", "email": "joao.gonzalez@stlflix.com" },
+  "metadata": {
+    "description": "Plugins de Jira da STLFLIX",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "stl-jira-plugin",
+      "source": "./",
+      "description": "Abertura de cards no Jira no padrão da STLFLIX, com validação e o token de cada pessoa.",
+      "category": "productivity"
+    }
+  ]
+}

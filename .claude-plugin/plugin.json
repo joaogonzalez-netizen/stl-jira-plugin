@@ -1,0 +1,42 @@
+{
+  "name": "stl-jira-plugin",
+  "version": "0.1.0",
+  "description": "Abertura de cards no Jira no padrão da STLFLIX: épico, user story, bug, tarefa e spike, com as perguntas de abertura, validação do padrão e criação no nome de quem está usando.",
+  "author": {
+    "name": "STLFLIX",
+    "email": "joao.gonzalez@stlflix.com"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "stlflix",
+    "jira",
+    "mcp",
+    "user-story",
+    "prd",
+    "bug",
+    "spike"
+  ],
+  "userConfig": {
+    "jira_domain": {
+      "type": "string",
+      "title": "Domínio do Jira",
+      "description": "O endereço do Jira da empresa, por exemplo suaempresa.atlassian.net (sem https://).",
+      "sensitive": false,
+      "required": true
+    },
+    "jira_email": {
+      "type": "string",
+      "title": "Seu e-mail do Jira",
+      "description": "O e-mail da sua conta Atlassian. Os cards serão abertos no seu nome.",
+      "sensitive": false,
+      "required": true
+    },
+    "jira_api_token": {
+      "type": "string",
+      "title": "Seu token de API do Jira",
+      "description": "Crie o SEU token em https://id.atlassian.com/manage-profile/security/api-tokens. Não use o token de outra pessoa: o reporter de cada card é o dono do token. Fica guardado no Keychain.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

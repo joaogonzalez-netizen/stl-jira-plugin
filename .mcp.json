@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "stl-jira": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/server/bundle/stl-jira.mjs"],
+      "env": {
+        "JIRA_DOMAIN": "${user_config.jira_domain}",
+        "JIRA_EMAIL": "${user_config.jira_email}",
+        "JIRA_API_TOKEN": "${user_config.jira_api_token}"
+      }
+    }
+  }
+}
