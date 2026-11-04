@@ -1,0 +1,88 @@
+{
+  "id": "user-story",
+  "name": "User Story",
+  "issueTypes": ["Story"],
+  "description": "User Story com Contexto, Objetivo, História em painel azul, Critérios de Aceite em Action Items e Gherkin com cenário de idiomas. Cenários de teste são opcionais.",
+  "questions": [
+    "Quem é a persona e em que estado ela está quando chega nessa situação?",
+    "O que ela quer alcançar e qual benefício real isso traz?",
+    "Qual é o fluxo principal de sucesso?",
+    "O que pode dar errado? Quais casos de borda existem?",
+    "Há regra de negócio, limite técnico ou condição especial?",
+    "De qual épico vem e qual North Star ela move?",
+    "Onde acontece: produto, tela e caminho até lá?",
+    "A história mexe em texto ou interface? Em quais telas os 3 idiomas entram?",
+    "Existe Figma ou outra referência de design?"
+  ],
+  "title": {
+    "maxLength": 100,
+    "hint": "verbo + resultado. Se vier de um épico, mantém o número: US-01 — Gerar anúncio a partir da foto"
+  },
+  "sections": [
+    {
+      "heading": "Caminho e acesso",
+      "required": true,
+      "format": "text",
+      "hint": "Caminho: Produto > Tela > Funcionalidade. Link e senha do app, quando o projeto tiver."
+    },
+    {
+      "heading": "Contexto",
+      "required": true,
+      "format": "text",
+      "contains": ["epico"],
+      "containsSeverity": "warning",
+      "containsMessage": "O Contexto deveria trazer a linha 'Épico: [chave] · move a North Star: [qual]'.",
+      "hint": "2-4 frases sobre o momento da jornada. Termine com: Épico: [chave] · move a North Star: [qual]."
+    },
+    {
+      "heading": "Objetivo",
+      "required": true,
+      "format": "text",
+      "hint": "Uma frase, em resultado e não em solução."
+    },
+    {
+      "heading": "User Story",
+      "required": true,
+      "format": "text",
+      "panel": "info",
+      "matches": [
+        {
+          "pattern": "como .+ quero .+ para ",
+          "message": "Use o formato: Como [persona específica], quero [capacidade] para [benefício real]."
+        }
+      ],
+      "hint": "Como [persona específica], quero [capacidade] para [benefício real]. Vai em painel azul."
+    },
+    {
+      "heading": "Critérios de Aceite",
+      "required": true,
+      "format": "actionItems",
+      "minItems": 3,
+      "contains": ["portugues", "espanhol", "ingles"],
+      "containsMessage": "Falta o critério 'Funciona em português, espanhol e inglês'.",
+      "hint": "Critérios verificáveis em Action Items: caminho principal, erro ou borda e 'Funciona em português, espanhol e inglês'."
+    },
+    {
+      "heading": "Contexto técnico",
+      "required": false,
+      "format": "text",
+      "expand": true,
+      "hint": "Opcional. Só quando há arquivo ou trecho específico a referenciar. Vai em Expand, com divisor antes."
+    },
+    {
+      "heading": "Gherkin",
+      "required": true,
+      "format": "code",
+      "minScenarios": 3,
+      "contains": ["esquema do cenario", "portugues", "espanhol", "ingles"],
+      "containsMessage": "O Gherkin precisa de um 'Esquema do Cenário' com Exemplos em português, espanhol e inglês.",
+      "hint": "Três cenários no mínimo: principal, erro ou borda e o Esquema do Cenário de idioma com Exemplos (português, espanhol, inglês). Último bloco da descrição."
+    },
+    {
+      "heading": "Cenários de teste",
+      "required": false,
+      "format": "text",
+      "hint": "Opcional, só se a pessoa pedir. Tabela com ID, tipo (positivo, negativo, borda, idioma), passos e dados, resultado esperado."
+    }
+  ]
+}

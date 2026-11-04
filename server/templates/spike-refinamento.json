@@ -1,0 +1,54 @@
+{
+  "id": "spike-refinamento",
+  "name": "Spike de refinamento",
+  "issueTypes": ["Spike"],
+  "description": "Refinamento técnico de um épico: quebra em histórias, dependências, arquitetura, idiomas e instrumentação, com resultado esperado obrigatório.",
+  "questions": [
+    "Qual é o épico (chave ou PRD) e qual a North Star?",
+    "O que o refinamento cobre e o que fica de fora?",
+    "Que integrações ou dependências externas já são conhecidas?",
+    "Quem mais precisa ajudar (desenvolvedores e equipes)?"
+  ],
+  "title": {
+    "maxLength": 100,
+    "hint": "Spike — Refinamento técnico: [nome do épico]"
+  },
+  "sections": [
+    {
+      "heading": "Contexto do épico",
+      "required": true,
+      "format": "text",
+      "contains": ["epico", "north star"],
+      "containsMessage": "Informe 'Épico: [chave]' e 'North Star: [qual]'.",
+      "hint": "2-4 frases do que o épico entrega e por quê. Épico: [chave] · North Star: [qual]."
+    },
+    {
+      "heading": "Escopo",
+      "required": true,
+      "format": "text",
+      "hint": "1-2 frases: o que o refinamento cobre e o que fica de fora."
+    },
+    {
+      "heading": "Perguntas do épico a responder",
+      "required": true,
+      "format": "text",
+      "hint": "Links para as Perguntas em aberto técnicas do épico."
+    },
+    {
+      "heading": "Checklist de refinamento técnico",
+      "required": true,
+      "format": "actionItems",
+      "minItems": 8,
+      "contains": ["idiomas", "instrumentacao"],
+      "containsMessage": "O checklist precisa dos itens de idiomas e de instrumentação das métricas.",
+      "hint": "Os 6 itens fixos mais: definir como os 3 idiomas serão tratados e definir os eventos de instrumentação da North Star e da métrica de guarda."
+    },
+    {
+      "heading": "Resultado esperado",
+      "required": true,
+      "format": "actionItems",
+      "minItems": 3,
+      "hint": "Histórias criadas e linkadas ao épico, estimativa em semanas registrada e perguntas técnicas respondidas no épico."
+    }
+  ]
+}

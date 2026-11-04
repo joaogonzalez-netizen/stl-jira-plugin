@@ -1,0 +1,87 @@
+{
+  "id": "bug",
+  "name": "Bug",
+  "issueTypes": ["Bug"],
+  "description": "Bug com passos, esperado vs atual, ambiente com idioma, impacto com severidade e evidência obrigatória. Todo problema em produção é Bug; a gravidade vem da severidade.",
+  "questions": [
+    "Onde acontece (produto, tela, caminho) e em qual idioma?",
+    "Quais são os passos para reproduzir, e o que era esperado versus o que acontece?",
+    "Desde quando acontece e com que frequência?",
+    "Quantos clientes são afetados e existe workaround?",
+    "Existe evidência: print, vídeo, link da conversa do Intercom ou log?",
+    "Isso impede a ação da North Star do produto?"
+  ],
+  "title": {
+    "maxLength": 100,
+    "hint": "[Tela ou área] + sintoma. Exemplo: Personalizador: exportação do ornamento falha"
+  },
+  "sections": [
+    {
+      "heading": "Caminho e acesso",
+      "required": true,
+      "format": "text",
+      "hint": "Caminho: Produto > Tela > Funcionalidade. Link e senha do app, quando houver."
+    },
+    {
+      "heading": "Contexto",
+      "required": true,
+      "format": "text",
+      "contains": ["origem"],
+      "containsMessage": "O Contexto precisa da linha 'Origem:' com o link da conversa do Intercom ou o time que reportou.",
+      "hint": "Quem é afetado, onde, desde quando e com que frequência. Termine com: Origem: [link do Intercom ou time]."
+    },
+    {
+      "heading": "Passos para reproduzir",
+      "required": true,
+      "format": "text",
+      "minLines": 2,
+      "hint": "Passos numerados, um por linha."
+    },
+    {
+      "heading": "Esperado vs atual",
+      "required": true,
+      "format": "text",
+      "contains": ["esperado", "atual"],
+      "hint": "Esperado: ... e Atual: ..."
+    },
+    {
+      "heading": "Ambiente",
+      "required": true,
+      "format": "text",
+      "containsAny": ["portugues", "espanhol", "ingles", "todos"],
+      "containsAnyMessage": "Informe o idioma em que o bug ocorre: português, espanhol, inglês ou todos.",
+      "hint": "Produção ou teste, navegador ou dispositivo e o idioma em que ocorre (PT, ES, EN ou todos)."
+    },
+    {
+      "heading": "Impacto",
+      "required": true,
+      "format": "text",
+      "contains": ["severidade"],
+      "containsAny": ["critico", "alto", "medio", "baixo"],
+      "containsAnyMessage": "A severidade precisa ser Crítico, Alto, Médio ou Baixo.",
+      "hint": "Severidade (Crítico: sem uso e sem workaround; Alto: bloqueia a North Star; Médio: atrapalha com workaround; Baixo: cosmético), clientes afetados e workaround."
+    },
+    {
+      "heading": "Evidência",
+      "required": true,
+      "format": "text",
+      "hint": "Print, vídeo, ID do pedido ou log. Sem evidência o card não sai do Backlog."
+    },
+    {
+      "heading": "Critérios de Aceite",
+      "required": true,
+      "format": "actionItems",
+      "minItems": 3,
+      "contains": ["portugues", "espanhol", "ingles", "regressao"],
+      "containsMessage": "Os critérios precisam incluir 'Não reproduz mais em português, espanhol e inglês' e o teste de regressão.",
+      "hint": "Em Action Items: comportamento esperado acontece, não reproduz nos 3 idiomas, teste de regressão adicionado, verificado em produção."
+    },
+    {
+      "heading": "Contexto técnico",
+      "required": false,
+      "format": "text",
+      "expand": true,
+      "hint": "Opcional, em Expand."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "spike-investigacao",
+  "name": "Spike de investigação",
+  "issueTypes": ["Spike"],
+  "description": "Investigação técnica para responder uma pergunta, com timebox obrigatório, opções a avaliar e critério de encerramento.",
+  "questions": [
+    "Qual é a pergunta exata a responder?",
+    "Quantos dias de timebox?",
+    "Quais opções já estão na mesa e qual o critério de comparação?",
+    "Quem decide ao final e onde a decisão fica registrada?"
+  ],
+  "title": {
+    "maxLength": 100,
+    "hint": "Spike — [pergunta técnica]"
+  },
+  "sections": [
+    {
+      "heading": "Pergunta a responder",
+      "required": true,
+      "format": "text",
+      "matches": [
+        {
+          "pattern": "\\?",
+          "message": "Escreva a pergunta com ponto de interrogação: uma pergunta que se responde com sim, não ou 'esta opção'."
+        }
+      ],
+      "hint": "Uma pergunta, que se responde com sim, não ou 'esta opção'."
+    },
+    {
+      "heading": "Timebox",
+      "required": true,
+      "format": "text",
+      "matches": [
+        {
+          "pattern": "\\d+\\s*(dia|dias|hora|horas|h)\\b",
+          "message": "Informe o timebox em dias ou horas. Exemplo: 3 dias."
+        }
+      ],
+      "hint": "N dias. Se acabar sem resposta, a spike para e registra o que descobriu."
+    },
+    {
+      "heading": "Opções a avaliar",
+      "required": true,
+      "format": "bullets",
+      "minItems": 2,
+      "hint": "2 ou 3 caminhos, com o critério de comparação."
+    },
+    {
+      "heading": "Saída esperada",
+      "required": true,
+      "format": "text",
+      "hint": "Decisão registrada ou documento, com link."
+    },
+    {
+      "heading": "Critério de encerramento",
+      "required": true,
+      "format": "actionItems",
+      "minItems": 2,
+      "hint": "Pergunta respondida e decisão com justificativa registradas."
+    }
+  ]
+}

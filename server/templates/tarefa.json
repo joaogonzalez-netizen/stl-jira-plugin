@@ -1,0 +1,50 @@
+{
+  "id": "tarefa",
+  "name": "Tarefa",
+  "issueTypes": ["Task"],
+  "description": "Tarefa é trabalho sem feature nova, técnico ou operacional: análise, documentação, revisão, ajuste manual de dados, configuração, alinhamento, acompanhamento. Se cria funcionalidade, é User Story.",
+  "questions": [
+    "Qual o objetivo e por que isso precisa ser feito agora?",
+    "O que precisa ficar pronto para dar a tarefa como concluída?",
+    "Que evidência vai comprovar a conclusão e quem confere?",
+    "Vem de alguma história ou de um épico?",
+    "Mexe em texto ou interface? Se sim, os 3 idiomas entram no checklist."
+  ],
+  "title": {
+    "maxLength": 100,
+    "hint": "verbo + objeto. Exemplo: Mapear o fluxo atual de onboarding e propor melhorias"
+  },
+  "sections": [
+    {
+      "heading": "Caminho e acesso",
+      "required": false,
+      "format": "text",
+      "hint": "Só se houver tela ou app envolvido."
+    },
+    {
+      "heading": "Objetivo",
+      "required": true,
+      "format": "text",
+      "hint": "1-2 frases: o que se quer alcançar e por quê. Origem (US ou épico) é opcional: 'Origem: [chave]'."
+    },
+    {
+      "heading": "Checklist do que precisa ficar pronto",
+      "required": true,
+      "format": "actionItems",
+      "minItems": 1,
+      "hint": "Action Items. Se mexe em texto ou interface, inclua 'Funciona em português, espanhol e inglês'."
+    },
+    {
+      "heading": "Evidência de conclusão",
+      "required": true,
+      "format": "text",
+      "hint": "Link, documento, log ou print. Preenchida ao concluir; ao abrir, escreva 'A preencher ao concluir' e quem confere."
+    },
+    {
+      "heading": "Referências",
+      "required": false,
+      "format": "text",
+      "hint": "Documentos, planilhas e acessos. Substitui o Contexto técnico."
+    }
+  ]
+}

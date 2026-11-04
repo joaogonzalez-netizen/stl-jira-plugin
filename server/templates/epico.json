@@ -1,0 +1,97 @@
+{
+  "id": "epico",
+  "name": "Épico (PRD)",
+  "issueTypes": ["Epic"],
+  "description": "Épico com o PRD resumido: problema, hipótese, objetivos, histórias sugeridas com critérios de aceite, requisitos, métricas com North Star e perguntas em aberto. Sem timeline.",
+  "questions": [
+    "Qual é o produto (Flix, Academy, Seller ou IA) e quem é a persona principal?",
+    "Qual é o problema, com que frequência acontece e qual a evidência (pesquisa, dados, suporte)?",
+    "Qual é a hipótese: acreditamos que [mudança] para [público] vai gerar [resultado]?",
+    "Qual métrica alvo e qual métrica de guarda (o que não pode piorar)? A North Star do produto é a referência.",
+    "Quais restrições e dependências existem? O que já foi tentado antes?",
+    "É um épico de discovery em que UX ou Dados vão responder as perguntas? Quais perguntas estão em aberto e quem responde?"
+  ],
+  "title": {
+    "maxLength": 100,
+    "hint": "[Produto] verbo + resultado. Exemplo: Seller: gerar anúncio a partir da foto do produto"
+  },
+  "sections": [
+    {
+      "heading": "Problema/contexto",
+      "required": true,
+      "format": "text",
+      "hint": "2-3 frases: quem enfrenta o problema, com que frequência e o custo de não resolver. Baseie em evidência."
+    },
+    {
+      "heading": "Hipótese",
+      "required": true,
+      "format": "text",
+      "hint": "Acreditamos que [mudança] para [público] no [produto] vai gerar [resultado]. Saberemos que acertamos quando [métrica] sair de [X] para [Y].",
+      "contains": ["acreditamos que", "saberemos que"]
+    },
+    {
+      "heading": "Objetivos",
+      "required": true,
+      "format": "bullets",
+      "minItems": 3,
+      "hint": "3-5 resultados mensuráveis, de usuário e de negócio. Resultado, não entrega."
+    },
+    {
+      "heading": "Não-objetivos",
+      "required": true,
+      "format": "bullets",
+      "minItems": 3,
+      "hint": "3-5 itens fora do escopo, cada um com o porquê em uma frase."
+    },
+    {
+      "heading": "Histórias sugeridas",
+      "required": true,
+      "format": "text",
+      "hint": "Agrupe por persona: 'Persona: [persona específica]'. Cada história vem em uma seção própria logo abaixo, com os critérios de aceite em Action Items."
+    },
+    {
+      "headingPattern": "^US-\\d+",
+      "required": true,
+      "minOccurrences": 2,
+      "format": "actionItems",
+      "minItems": 2,
+      "contains": ["portugues", "espanhol", "ingles"],
+      "hint": "Uma seção por história: heading 'US-01 — título'. Os critérios de aceite incluem 'Funciona em português, espanhol e inglês'."
+    },
+    {
+      "headingPattern": "^US-\\d+.*idiomas",
+      "required": true,
+      "format": "actionItems",
+      "minItems": 4,
+      "contains": ["portugues", "espanhol", "ingles"],
+      "hint": "História obrigatória de todo épico: 'US-XX — Experiência nos 3 idiomas', com critérios para textos, formatos de data e moeda, mensagens e layout."
+    },
+    {
+      "heading": "Requisitos",
+      "required": true,
+      "format": "text",
+      "contains": ["p0", "idiomas"],
+      "hint": "P0 essencial, P1 importante, P2 futuro, com restrições e dependências. Inclua sempre a linha 'Idiomas: PT, ES e EN'."
+    },
+    {
+      "heading": "Métricas de sucesso",
+      "required": true,
+      "format": "text",
+      "contains": ["north star", "alvo", "guarda"],
+      "hint": "North Star do produto no topo. Uma linha por métrica: nome | tipo (Alvo ou Guarda) | meta ou limite | quando avaliar. A North Star usa janela de 30 dias."
+    },
+    {
+      "heading": "Perguntas em aberto",
+      "required": true,
+      "format": "bullets",
+      "minItems": 1,
+      "eachBullet": [
+        {
+          "pattern": "^\\[[^\\]]+\\].*bloqueante",
+          "message": "Cada pergunta precisa da área responsável entre colchetes e da marca 'bloqueante' ou 'não bloqueante'. Exemplo: [UX] Qual o fluxo atual? — bloqueante"
+        }
+      ],
+      "hint": "Se o épico está em discovery, diga que UX e Dados vão responder. Cada pergunta: [área] pergunta — bloqueante ou não bloqueante."
+    }
+  ]
+}
