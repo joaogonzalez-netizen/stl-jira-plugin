@@ -1,6 +1,6 @@
 {
   "name": "stl-jira-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Abertura de cards no Jira no padrão da STLFLIX: épico, user story, bug, tarefa e spike, com as perguntas de abertura, validação do padrão e criação no nome de quem está usando.",
   "author": {
     "name": "STLFLIX",
